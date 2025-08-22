@@ -4,12 +4,11 @@ import BookItem from "@/components/book-item";
 import { Suspense } from "react";
 import { delay } from "../util/delay";
 import BookListSkeleton from "@/components/skeleton/book-list-skeleton";
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 async function AllBooks() {
-  await delay(1500);
-
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book`,
     { cache: "force-cache" }
@@ -30,7 +29,6 @@ async function AllBooks() {
 }
 
 async function RecoBooks() {
-  await delay(3000);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/random`
   );

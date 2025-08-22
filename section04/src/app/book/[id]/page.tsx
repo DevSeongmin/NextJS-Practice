@@ -62,7 +62,7 @@ async function ReviewList({ bookId }: { bookId: string }) {
   );
 }
 
-export default async function Page({
+export default async function BookPage({
   params,
 }: {
   params: Promise<{ id: string }>;
